@@ -14,9 +14,9 @@
 if [ "$1" = "-r" ] ; then
 	read -p "Are you sure you want to delete the dotfiles? y/n: " response
 	if [ "$response" = "y" ] ; then 
-		rm ~/.bash_aliases
-		rm ~/.tmux.conf
-		rm -r ~/.config/nvim
+		rm "/home/$USER/.bash_aliases"
+		rm "/home/$USER/.tmux.conf"
+		rm -r "/home/$USER/.config/nvim/init.vim"
 		echo "Dotfiles deleted successfully!"
 	elif [ "$response" = "n" ] ; then
 		echo "Exiting the program."
@@ -27,17 +27,17 @@ if [ "$1" = "-r" ] ; then
 fi
 
 # Tmux configuration
-cp tmux/.tmux.conf ~/.tmux.conf
+cp tmux/.tmux.conf "/home/$USER/.tmux.conf"
 
 # Neovim configuration
-if [ ! -d "~/.config/nvim" ] ; then 
+if [ ! -d "/home/$USER/.config/nvim" ] ; then 
 	echo -e "\033[0;33mW: You may need to install vim-plug see: https://github.com/junegunn/vim-plug#neovim\033[0m"
 	echo "Configuration directory for Neovim doesn't exist... Creating one..."
-	mkdir ~/.config/nvim
+	mkdir "/home/$USER/.config/nvim"
 fi
-cp nvim/init.vim ~/.config/nvim/init.vim
+cp nvim/init.vim "/home/$USER/.config/nvim/init.vim"
 
 # Bash aliases
-cp bash/.bash_aliases ~/.bash_aliases
+cp bash/.bash_aliases "/home/$USER/.bash_aliases"
 
 echo "Dotfiles copied succesfully!"
