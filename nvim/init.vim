@@ -17,21 +17,23 @@ call plug#begin('~/.vim/plugged')
 " Gruvbox theme
 Plug 'gruvbox-community/gruvbox'
 
-" treesitter
+" Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-" Telescope fuzzyfinder
+" Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+" Better fuzzy finder for telescope
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
-" lsp
+" Lsp
 Plug 'neovim/nvim-lspconfig'
 
 " JavaScript plugins
 Plug 'chemzqm/vim-jsx-improve'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
-" Prisma syntax highlighting
+" Prisma syntax highlighting (nodejs orm)
 Plug 'pantharshit00/vim-prisma'
 
 " HCL ( Terraform ) syntax highlighting
@@ -43,40 +45,14 @@ call plug#end()
 let g:gruvbox_transparent_bg = 1
 colorscheme gruvbox
 
-lua << EOF
-require'lspconfig'.eslint.setup{}
--- lsp for golang
--- require'lspconfig'.gopls.setup{single_file_support=true}
-
-require'nvim-treesitter.configs'.setup {
-    -- A list of parser names
-    ensure_installed = { "c", "python", "go", "cpp", "css", "html", "javascript" },
-
-    highlight = {
-        enable = true,
-        -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-        -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-        -- Using this option may slow down your editor, and you may see some duplicate highlights.
-        -- Instead of true it can also be a list of languages
-        additional_vim_regex_highlighting = false,
-    },
-}
-EOF
-
 let mapleader = " "
+
+" Import lua configuration files
+lua require("alex")
 
 " lsp show error
 nnoremap <leader>e <cmd>lua vim.diagnostic.open_float()<cr>
 
-
-" Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
-" Using Lua functions
+" Find files using Lua functions (Telescope)
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
