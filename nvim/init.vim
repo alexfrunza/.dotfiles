@@ -30,8 +30,9 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'neovim/nvim-lspconfig'
 
 " JavaScript plugins
-Plug 'chemzqm/vim-jsx-improve'
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+" Syntax highlight for jsx
+" Plug 'chemzqm/vim-jsx-improve'
+" Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
 " Prisma syntax highlighting (nodejs orm)
 Plug 'pantharshit00/vim-prisma'
@@ -49,10 +50,3 @@ let mapleader = " "
 
 " Import lua configuration files
 lua require("alex")
-
-" lsp show error
-nnoremap <leader>e <cmd>lua vim.diagnostic.open_float()<cr>
-
-" Find files using Lua functions (Telescope)
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
