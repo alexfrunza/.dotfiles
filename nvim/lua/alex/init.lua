@@ -13,7 +13,7 @@ require'lspconfig'.gopls.setup{
         -- List of diagnostics in telescope
         vim.keymap.set("n", "<leader>dl", require'telescope.builtin'.diagnostics, {buffer=0})
         -- Show details of an error
-        vim.keymap.set("n", "<ledaer>e", vim.diagnostic.open_float, {buffer=0})
+        vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {buffer=0})
         -- Format code
         vim.keymap.set("n", "<leader>p", vim.lsp.buf.format, {buffer=0})
         -- Rename a variable
