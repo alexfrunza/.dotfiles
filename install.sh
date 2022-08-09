@@ -57,7 +57,4 @@ https://github.com/junegunn/vim-plug#neovim\033[0m"
 fi
 cp -r nvim "/home/$USER/.config"
 
-# Bash aliases
-cp bash/.bash_aliases "/home/$USER/.bash_aliases"
-
 echo "Dotfiles installed succesfully!"
