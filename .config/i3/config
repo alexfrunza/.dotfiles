@@ -218,7 +218,7 @@ exec --no-startup-id xdg-user-dirs-update
 bindsym Print exec gnome-screenshot -i 
 
 # Enable touchpad tap to be click to see which option to enable see xinput program
-exec xinput set-prop 11 344 1
+exec --no-startup-id xinput set-prop "MSFT0002:00 04F3:3141 Touchpad" "libinput Tapping Enabled" 1
 
 # Hide title bar
 default_border pixel 1
@@ -227,3 +227,14 @@ default_floating_border pixel 1
 # Set background image
 # exec --no-startup-id feh --bg-center /image/path
 exec --no-startup-id feh --bg-center /home/alex/Pictures/Wallpapers/girl-and-boy.jpg
+
+# Transparent background for kitty
+# picom must be installed
+exec --no-startup-id picom -CGb
+
+
+# Brightness keys
+# Set brightness up
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
+# Set brightness down
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessdown

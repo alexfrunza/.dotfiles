@@ -1,0 +1,8 @@
+#!/bin/bash
+max_brightness=$(brightnessctl max)
+min_brightness=$((max_brightness * 10 / 100))
+current_brightness=$(brightnessctl get)
+
+if ((current_brightness > min_brightness)); then
+    brightnessctl set 10%- > /dev/null
+fi
