@@ -1,8 +1,18 @@
 #!/bin/bash
+# Script used to lower brightness in i3wm
+# This script was made to ensure that screen is still visible and
+# brightness isn't too low
+
 max_brightness=$(brightnessctl max)
-min_brightness=$((max_brightness * 10 / 100))
+
+brightness10=$((max_brightness * 10 / 100)) # 10% of max brightness
+
 current_brightness=$(brightnessctl get)
 
-if ((current_brightness > min_brightness)); then
+next_brightness=$((current_brightness - max_brightness*10/100))
+
+if ((next_brightness > brightness10)); then
     brightnessctl set 10%- > /dev/null
+else
+    brightnessctl set 10% > /dev/null
 fi
