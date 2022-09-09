@@ -12,7 +12,7 @@ require'lspconfig'.gopls.setup{
         -- Show details of an error
         vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {buffer=0})
         -- Format code
-        vim.keymap.set("n", "<leader>p", vim.lsp.buf.format, {buffer=0})
+        vim.keymap.set("n", "<leader>=", vim.lsp.buf.format, {buffer=0})
         -- Rename a variable
         vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {buffer=0})
     end
