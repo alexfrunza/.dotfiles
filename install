@@ -1,0 +1,15 @@
+#! /bin/bash
+source stowdirs
+
+for dir in ${STOW_DIRS[@]}; do
+    echo "stow $dir"
+    stow -D $dir
+    stow $dir
+done
+
+echo "stow $DISTRO"
+stow -D $DISTRO
+stow $DISTRO
+
+
+

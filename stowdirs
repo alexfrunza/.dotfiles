@@ -1,0 +1,3 @@
+#! /bin/bash
+export STOW_DIRS=("kitty" "i3status" "i3" "tmux" "picom" "nvim" "bin")
+export DISTRO=$(cat /etc/os-release | grep "^ID=" | cut -b 4-)

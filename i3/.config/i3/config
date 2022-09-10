@@ -232,7 +232,8 @@ exec --no-startup-id feh --bg-center /home/alex/Pictures/Wallpapers/girl-and-boy
 
 # Transparent background for kitty
 # picom must be installed
-exec --no-startup-id picom -CGb
+# --experimental-backend fix tearing
+exec --no-startup-id picom --vsync -CGb --backend glx
 
 
 # Brightness keys
