@@ -36,10 +36,10 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -q sset Master 5%+ && python /home/alex/.dotfiles/scripts/get-sound.py Master up"
-bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q sset Master 5%- && python /home/alex/.dotfiles/scripts/get-sound.py Master down"
-bindsym XF86AudioMute exec --no-startup-id "amixer -q sset Master toggle && python /home/alex/.dotfiles/scripts/get-sound.py Master mute"
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -q sset Master 5%+ && python ~/.dotfiles/scripts/get-sound.py Master up"
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q sset Master 5%- && python ~/.dotfiles/scripts/get-sound.py Master down"
+bindsym XF86AudioMute exec --no-startup-id "amixer -q sset Master toggle && python ~/.dotfiles/scripts/get-sound.py Master mute"
+bindsym XF86AudioMicMute exec --no-startup-id "amixer -q sset Capture toggle && python ~/.dotfiles/scripts/mic-notify.py Capture"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
