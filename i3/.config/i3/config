@@ -220,6 +220,7 @@ bindsym --release Shift+Print exec --no-startup-id "maim -su | xclip -selection 
 
 # Enable touchpad tap to be click to see which option to enable see xinput program
 exec --no-startup-id xinput set-prop "MSFT0002:00 04F3:3141 Touchpad" "libinput Tapping Enabled" 1
+exec --no-startup-id xinput set-prop "MSFT0002:00 04F3:3141 Touchpad" 'libinput Disable While Typing Enabled' 0
 
 # Hide title bar
 default_border pixel 1
