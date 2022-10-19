@@ -9,7 +9,9 @@ return require('packer').startup(function(use)
     -- Treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
+        run = ':TSUpdate',
+        -- newer commits break the syntax highlighting
+        commit = '9bfaf62e42bdcd042df1230e9188487e62a112c0'
     }
 
     -- Telescope and dependencies
@@ -26,5 +28,9 @@ return require('packer').startup(function(use)
 
     -- Lsp helper
     use 'neovim/nvim-lspconfig'
+
+    -- Prettier (js formatter)
+    use('jose-elias-alvarez/null-ls.nvim')
+    use('MunifTanjim/prettier.nvim')
 
 end)

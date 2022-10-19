@@ -25,3 +25,6 @@ require'lspconfig'.clangd.setup{
     on_attach = set_keymaps,
 }
 
+require'lspconfig'.eslint.setup{
+    on_attach = set_keymaps,
+}
