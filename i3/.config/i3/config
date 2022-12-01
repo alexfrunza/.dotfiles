@@ -231,7 +231,7 @@ for_window [class="discord"] border pixel 1
 
 # Set background image
 # exec --no-startup-id feh --bg-center /image/path
-exec --no-startup-id feh --bg-center /home/$USER/.dotfiles/Wallpapers/wonderland-machine.png
+exec --no-startup-id feh --bg-center /home/$USER/.dotfiles/Wallpapers/chopper.png
 
 # Transparent background for kitty
 # picom must be installed
