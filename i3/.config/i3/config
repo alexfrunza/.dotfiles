@@ -232,7 +232,7 @@ for_window [class="jetbrains*"] border pixel 1
 
 # Set background image
 # exec --no-startup-id feh --bg-center /image/path
-exec --no-startup-id feh --bg-center /home/$USER/.dotfiles/Wallpapers/chopper.png
+exec --no-startup-id feh --bg-center /home/$USER/.dotfiles/Wallpapers/fedora26.png
 
 # Transparent background for kitty
 # picom must be installed
