@@ -247,3 +247,6 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessdown
 # Suspend
 bindsym $mod+Shift+period exec systemctl suspend
+
+# Standby after 3600 seconds 
+exec --no-startup-id xset dpms 3600 0 0
