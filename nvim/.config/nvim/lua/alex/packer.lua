@@ -2,8 +2,8 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    -- GRUVBOX colorscheme
-    use 'ellisonleao/gruvbox.nvim'
+	-- catppuccin colorscheme
+	use { "catppuccin/nvim", as = "catppuccin" }
 
 
     -- Treesitter
