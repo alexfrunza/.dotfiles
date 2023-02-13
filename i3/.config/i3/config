@@ -257,8 +257,8 @@ bar {
 	separator $text 
 
 	focused_workspace	$mantle $rosewater $mantle
-    active_workspace	$mantle $base $text
-    inactive_workspace	$mantle $base $text
+    active_workspace	$mantle $mantle $text
+    inactive_workspace	$mantle $mantle $text
     urgent_workspace	$mantle $red $mantle 
 	binding_mode		$mantle $red $mantle 
 	}
