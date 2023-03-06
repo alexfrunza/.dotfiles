@@ -26,12 +26,12 @@ def unmute(name: str):
 
 
 def restore_volume(name: str):
-    result = subprocess.run(['amixer', '-q', 'sset', name, '5%'],
+    result = subprocess.run(['amixer', '-q', 'sset', name, '20%'],
                             stderr=subprocess.PIPE)
 
     if err := result.stderr:
         err = str(err, 'UTF-8')
-        sys.exit(f"Error in running 'amixer -q sset {name} 5%':\n{err}")
+        sys.exit(f"Error in running 'amixer -q sset {name} 20%':\n{err}")
 
 
 def send_notification_with_status(expire_time: int, status: str):
@@ -59,7 +59,7 @@ if __name__ == '__main__':
     volume_left, status_left, volume_right, status_right = get_mic_status(name)
     status = 'on'
 
-    if volume_left != volume_right or volume_left != 5:
+    if volume_left != volume_right or volume_left != 20:
         restore_volume(name)
 
     if status_left != status_right:
