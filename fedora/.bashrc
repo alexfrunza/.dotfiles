@@ -10,6 +10,11 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
 then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
+
+if [ -d "$HOME/src/java-semantics/bin" ]; then
+	PATH="$HOME/src/java-semantics/bin:$PATH"
+fi
+
 export PATH
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
