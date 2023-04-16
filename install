@@ -1,4 +1,7 @@
-#! /bin/bash
+#!/bin/bash
+# This script creates symbolic links to configurations
+# stow utility must be installed separately
+
 source stowdirs
 
 for dir in ${STOW_DIRS[@]}; do
@@ -6,10 +9,3 @@ for dir in ${STOW_DIRS[@]}; do
     stow -D $dir
     stow $dir
 done
-
-echo "stow $DISTRO"
-stow -D $DISTRO
-stow $DISTRO
-
-
-

@@ -11,6 +11,8 @@ then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 
+# For Alk programming language (language used at faculty at Algorithm Design)
+# https://github.com/alk-language/java-semantics
 if [ -d "$HOME/src/java-semantics/bin" ]; then
 	PATH="$HOME/src/java-semantics/bin:$PATH"
 fi

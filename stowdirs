@@ -1,3 +1,5 @@
-#! /bin/bash
-export STOW_DIRS=("kitty" "i3status" "i3" "tmux" "picom" "nvim" "clang-format" "bin" "fonts")
-export DISTRO=$(cat /etc/os-release | grep "^ID=" | cut -b 4-)
+#!/bin/bash
+# This file must not be edited, instead use the following script: setvariables.sh
+# to generate a new stowdirs file
+
+export STOW_DIRS=("tmux" "clang-format" "bin" "nvim" "fonts" "sway" "waybar" "fedora" "foot")
