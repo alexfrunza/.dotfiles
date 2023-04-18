@@ -32,3 +32,5 @@ if [ -d ~/.bashrc.d ]; then
 fi
 
 unset rc
+
+export EDITOR=nvim
