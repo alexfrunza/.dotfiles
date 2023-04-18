@@ -31,7 +31,7 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg
-output * bg /usr/share/backgrounds/default.png fill
+output * bg $HOME/.dotfiles/Wallpapers/f38-01-night.png fill
 #
 # Example configuration:
 #
@@ -51,6 +51,11 @@ output * bg /usr/share/backgrounds/default.png fill
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+
+exec swayidle -w \
+	timeout 600 'swaylock -f -c 000000' \
+	timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+	before-sleep 'swaylock -f -c 000000'
 
 ### Input configuration
 #
@@ -240,7 +245,7 @@ smart_gaps on
 
 # Activate smart borders (only when there are effectively no gaps)
 smart_borders no_gaps
-# end - gaps
+# end - Gaps
 
 bindgesture swipe:3:right workspace next
 bindgesture swipe:3:left workspace prev
@@ -249,13 +254,5 @@ bindgesture swipe:3:left workspace prev
 default_border pixel 0
 default_floating_border pixel 1
 
-# Screenshot bidings
-# Capture all screens to clipboard
-bindsym Shift+Print exec grim - | wl-copy -t image/png
-
-# Caputure a region of screen
-bindsym Shift+Alt+Print exec grim -g "$(slurp)" - | wl-copy -t image/png
-
 # Sleep/Suspend
 bindsym $mod+Shift+period exec systemctl suspend
-
