@@ -1,13 +1,8 @@
-#! /bin/bash
+#!/bin/bash
+
 source stowdirs
 
 for dir in ${STOW_DIRS[@]}; do
     echo "Removing $dir"
     stow -D $dir
 done
-
-echo "Removing $DISTRO"
-stow -D $DISTRO
-
-
-
