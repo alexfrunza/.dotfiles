@@ -9,7 +9,7 @@
 window#waybar {
 	/* base color is: #24273a */
 	background-color: rgba(36, 39, 58, 0.95);
-	border: 2px solid alpha(@crust, 0.3);
+	/* border: 2px solid alpha(@crust, 0.3); */
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -87,15 +87,34 @@ button {
 	background-color: inherit;
 }
 
+#network {
+	color: @sky;
+}
+
+#pulseaudio {
+	color: @flamingo;
+}
+
+#memory {
+	padding-right: 14px;
+	color: @mauve;
+}
+
+#backlight {
+	padding-right: 14px;
+	color: @yellow;
+}
+
+#battery {
+	margin-right: 5px;
+	color: @green;
+}
+
 @keyframes blink {
     to {
         background-color: #ffffff;
         color: #000000;
     }
-}
-
-#battery {
-	margin-right: 5px;
 }
 
 #battery.critical:not(.charging) {
@@ -106,11 +125,6 @@ button {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-}
-
-#memory,
-#backlight {
-	padding-right: 14px;
 }
 
 #custom-media {
