@@ -9,7 +9,6 @@
 window#waybar {
 	/* base color is: #24273a */
 	background-color: rgba(36, 39, 58, 0.95);
-	/* border: 2px solid alpha(@crust, 0.3); */
     transition-property: background-color;
     transition-duration: .5s;
 }
