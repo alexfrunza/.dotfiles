@@ -1,5 +1,0 @@
-#!/bin/bash
-# This file must not be edited, instead use the following script: setvariables.sh
-# to generate a new stowdirs file
-
-export STOW_DIRS=("tmux" "clang-format" "bin" "nvim" "fonts" "sway" "waybar" "fedora" "foot")

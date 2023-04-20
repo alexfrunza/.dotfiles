@@ -4,6 +4,9 @@
 
 DEFAULT_DIRS=("tmux" "clang-format" "bin" "nvim" "fonts")
 
+# Available configurations for launchers
+launchers=("rofi")
+
 # Available configurations for window manager
 wms=("sway" "i3")
 
@@ -166,6 +169,7 @@ STOW_DIRS_ELEMENTS+="\"$WINDOW_MANAGER\" "
 STOW_DIRS_ELEMENTS+="\"$BAR\" "
 STOW_DIRS_ELEMENTS+="\"$DISTRO\" "
 STOW_DIRS_ELEMENTS+="\"$TERMINAL\" "
+STOW_DIRS_ELEMENTS+="\"${launchers[0]}\" "
 
 if [[ WAYLAND == "n" ]]; then
 	for element in ${x_specific[@]}; do
