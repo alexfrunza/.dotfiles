@@ -75,6 +75,11 @@ input "1267:12609:MSFT0002:00_04F3:3141_Touchpad" {
 	tap enabled
 }
 
+input type:keyboard {
+	xkb_layout us,ro
+}
+bindsym $mod+grave input type:keyboard xkb_switch_layout next
+
 ### Key bindings
 #
 # Basics:
