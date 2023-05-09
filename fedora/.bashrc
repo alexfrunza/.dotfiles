@@ -17,6 +17,10 @@ if [ -d "$HOME/src/java-semantics/bin" ]; then
 	PATH="$HOME/src/java-semantics/bin:$PATH"
 fi
 
+if [ -d "$HOME/src/Postman" ]; then
+	PATH="$HOME/src/Postman:$PATH"
+fi
+
 export PATH
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
