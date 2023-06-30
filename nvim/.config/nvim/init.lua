@@ -1,2 +1,1 @@
-require'basicconf'
-
+require 'basicconf'

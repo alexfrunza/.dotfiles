@@ -1,5 +1,5 @@
-require'telescope'.setup{
-    -- settings for telescope...
+require 'telescope'.setup {
+  -- settings for telescope...
 }
 
-require'telescope'.load_extension('fzf')
+require 'telescope'.load_extension('fzf')

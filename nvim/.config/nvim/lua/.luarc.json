@@ -1,0 +1,21 @@
+{
+    "workspace.library": [
+        "/home/alexf/.config/nvim",
+        "/home/alexf/.local/share/nvim/lazy/lazy.nvim",
+        "/home/alexf/.local/share/nvim/lazy/null-ls.nvim",
+        "/home/alexf/.local/share/nvim/lazy/plenary.nvim",
+        "/home/alexf/.local/share/nvim/lazy/telescope.nvim",
+        "/home/alexf/.local/share/nvim/lazy/prettier.nvim",
+        "/home/alexf/.local/share/nvim/lazy/nvim-treesitter",
+        "/home/alexf/.local/share/nvim/lazy/catppuccin",
+        "/home/alexf/.local/share/nvim/lazy/nvim-lspconfig",
+        "/home/alexf/.local/share/nvim/lazy/nvim-web-devicons",
+        "/home/alexf/.local/share/nvim/lazy/telescope-fzf-native.nvim",
+        "/usr/local/share/nvim/runtime",
+        "/usr/local/share/nvim/runtime/pack/dist/opt/matchit",
+        "/home/alexf/.local/share/nvim/lazy/catppuccin/after",
+        "/home/alexf/.config/nvim/after",
+        "/home/alexf/.local/state/nvim/lazy/readme",
+        "${3rd}/luassert/library"
+    ]
+}
