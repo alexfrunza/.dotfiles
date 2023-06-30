@@ -8,20 +8,8 @@ fi
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
 then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+    export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
-
-# For Alk programming language (language used at faculty at Algorithm Design)
-# https://github.com/alk-language/java-semantics
-if [ -d "$HOME/src/java-semantics/bin" ]; then
-	PATH="$HOME/src/java-semantics/bin:$PATH"
-fi
-
-if [ -d "$HOME/src/Postman" ]; then
-	PATH="$HOME/src/Postman:$PATH"
-fi
-
-export PATH
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
