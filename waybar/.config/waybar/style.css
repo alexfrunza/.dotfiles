@@ -1,20 +1,20 @@
 @import "macchiato.css";
 
 * {
-    font-family: DroidSansMono Nerd Font;
-    font-size: 16px;
-    color: @text;
+  font-family: DroidSansMono Nerd Font;
+  font-size: 16px;
+  color: @text;
 }
 
 window#waybar {
-	/* base color is: #24273a */
-	background-color: rgba(36, 39, 58, 0.95);
-    transition-property: background-color;
-    transition-duration: .5s;
+  /* base color is: #24273a */
+  background-color: rgba(36, 39, 58, 0.95);
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+  opacity: 0.2;
 }
 
 /*
@@ -27,37 +27,37 @@ window#waybar.solo {
 */
 
 window#waybar.termite {
-    background-color: #3F3F3F;
+  background-color: #3f3f3f;
 }
 
 window#waybar.chromium {
-    background-color: #000000;
-    border: none;
+  background-color: #000000;
+  border: none;
 }
 
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
+  /* Avoid rounded borders under each button name */
+  border: none;
+  border-radius: 0;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-	box-shadow: inherit;
-	text-shadow: inherit;
-    background: inherit;
-	border: inherit;
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: inherit;
+  border: inherit;
 }
 
 #workspaces button {
-    padding: 0 10px;
-	margin-left: -4px;
+  padding: 0 10px;
+  margin-left: -4px;
 }
 
 #workspaces button.urgent {
-    color: @red;
+  color: @red;
 }
 
 #clock,
@@ -65,98 +65,104 @@ button {
 #memory,
 #backlight,
 #network,
+#idle_inhibitor,
 #pulseaudio,
 #custom-media {
-    padding: 0 10px;
-    color: @text;
-	background-color: @surface0;
+  padding: 0 10px;
+  color: @text;
+  background-color: @surface0;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 #clock {
-	background-color: inherit;
+  background-color: inherit;
+}
+
+#idle_inhibitor {
+  padding-right: 14px;
+  color: @peach;
 }
 
 #network {
-	color: @sky;
+  color: @sky;
 }
 
 #pulseaudio {
-	color: @flamingo;
+  color: @flamingo;
 }
 
 #memory {
-	padding-right: 14px;
-	color: @mauve;
+  padding-right: 14px;
+  color: @mauve;
 }
 
 #backlight {
-	padding-right: 14px;
-	color: @yellow;
+  padding-right: 14px;
+  color: @yellow;
 }
 
 #battery {
-	margin-right: 5px;
-	color: @green;
+  margin-right: 5px;
+  color: @green;
 }
 
 @keyframes blink {
-    to {
-        color: @red;
-    }
+  to {
+    color: @red;
+  }
 }
 
 #battery.critical:not(.charging) {
-    background-color: @surface0;
-    color: @green;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  background-color: @surface0;
+  color: @green;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
+  background-color: #66cc99;
+  color: #2a5c45;
+  min-width: 100px;
 }
 
 #custom-media.custom-spotify {
-    background-color: #66cc99;
+  background-color: #66cc99;
 }
 
 #custom-media.custom-vlc {
-    background-color: #ffa000;
+  background-color: #ffa000;
 }
 
 #tray {
-	padding: 0 10px;
-    background-color: inherit;
+  padding: 0 10px;
+  background-color: inherit;
 }
 
 #tray > .passive {
-    -gtk-icon-effect: dim;
+  -gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+  -gtk-icon-effect: highlight;
+  background-color: #eb4d4b;
 }
 
 #scratchpad {
-    background-color: inherit;
+  background-color: inherit;
 }
 
 #scratchpad.empty {
-	background-color: transparent;
+  background-color: transparent;
 }
