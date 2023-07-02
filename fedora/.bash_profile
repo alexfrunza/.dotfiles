@@ -25,11 +25,11 @@ export PATH="$PATH:/home/alexf/.local/share/JetBrains/Toolbox/scripts"
 # fi
 
 if [ -d "$HOME/src/Postman" ]; then
-	export PATH="$HOME/src/Postman:$PATH"
+	export PATH="$PATH:$HOME/src/Postman"
 fi
 
 if [ -d "$HOME/src/lua-language-server/bin" ]; then
-	export PATH="$HOME/src/lua-language-server/bin:$PATH"
+    export PATH="$PATH:$HOME/src/lua-language-server/bin"
 fi
 
 # Accessibility settings for 1 hand
