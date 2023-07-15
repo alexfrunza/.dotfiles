@@ -11,7 +11,7 @@ vim.opt.hlsearch = false
 
 vim.opt.smartindent = true
 vim.opt.wrap = false
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 5
 
 vim.opt.hidden = true
 
