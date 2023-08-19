@@ -25,4 +25,3 @@ fi
 
 unset rc
 
-export EDITOR=nvim

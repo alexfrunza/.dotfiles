@@ -39,3 +39,6 @@ fi
 
 # don't expire these settings. (run xkbset q exp for details.)
 # xkbset exp 1 =accessx =sticky =twokey =latchlock
+
+export EDITOR=nvim
+
