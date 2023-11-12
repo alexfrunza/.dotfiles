@@ -1,1 +1,3 @@
 stowdirs
+**/waybar/config
+**/sway/config.d/monitors.conf

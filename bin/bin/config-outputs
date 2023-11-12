@@ -1,0 +1,53 @@
+#!/bin/bash
+
+HELP_MESSAGE="\
+Used for switching the configurations for display.\n\n\
+Arguments:\n\
+-h              - show this message\n\
+dual-monitors   - configure the output for two monitors\n\
+single-monitor  - configure the output for one monitor\n"
+
+WAYBAR_CONFIG_PATH="/home/$USER/.dotfiles/waybar/.config/waybar"
+SWAY_CONFIG_PATH="/home/$USER/.dotfiles/sway/.config/sway"
+
+function replace_waybar_config {
+    ln -sf "$WAYBAR_CONFIG_PATH/$1" "$WAYBAR_CONFIG_PATH/config"
+}
+
+function replace_sway_config {
+    case $1 in 
+        "config_dual_monitors" )
+            ln -sf "$SWAY_CONFIG_PATH/config.d/configs_monitors/$1" "$SWAY_CONFIG_PATH/config.d/monitors.conf"
+            ;;
+        "config_single_monitor" )
+            if [ -f "$SWAY_CONFIG_PATH/config.d/monitors.conf" ]; then
+                rm "$SWAY_CONFIG_PATH/config.d/monitors.conf"
+            fi
+            ;;
+    esac
+
+}
+
+case $1 in
+    "-h" )
+        printf "$HELP_MESSAGE" 
+        exit 0
+        ;;
+    "dual-monitors" )
+        replace_waybar_config config_dual_monitors
+        replace_sway_config config_dual_monitors
+        ;;
+    "single-monitor" )
+        replace_waybar_config config_single_monitor
+        replace_sway_config config_single_monitor
+        ;;
+    * )
+        printf "$HELP_MESSAGE"
+        exit 0
+        ;;
+esac
+
+swaymsg reload
+
+echo "Configuration was applied"
+
