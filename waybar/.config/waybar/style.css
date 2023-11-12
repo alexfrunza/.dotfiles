@@ -61,6 +61,8 @@ button {
 }
 
 #clock,
+#language,
+#keyboard-state label.locked,
 #battery,
 #memory,
 #backlight,
@@ -85,6 +87,16 @@ button {
 
 #clock {
   background-color: inherit;
+}
+
+#keyboard-state label.locked {
+    padding-right: 12px;
+    color: @maroon;
+}
+
+#language {
+    padding-right: 8px;
+    color: @lavender;
 }
 
 #idle_inhibitor {

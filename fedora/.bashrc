@@ -25,3 +25,4 @@ fi
 
 unset rc
 
+. "$HOME/.cargo/env"

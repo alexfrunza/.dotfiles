@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Script to connect to personal hotspot
+
+nmcli dev wifi list --rescan yes > /dev/null
+
+if [[ "$1" = "-p" &&  "$2" = "" ]]; then
+    echo "You must enter a password"
+    exit 1
+elif [[ "$1" = "-p" ]]; then
+    nmcli device wifi connect "BSD" password "$2"
+else
+    nmcli device wifi connect "BSD"
+fi
+

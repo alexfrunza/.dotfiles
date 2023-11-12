@@ -1,0 +1,17 @@
+set $out_left eDP-1
+set $out_right HDMI-A-1
+
+output $out_left pos 0,0 mode 1920x1080@60Hz
+output $out_right pos 1920,0 mode 1920x1080@60Hz
+
+workspace 1 output $out_right
+workspace 2 output $out_right
+workspace 3 output $out_right
+workspace 4 output $out_right
+workspace 5 output $out_right
+
+workspace 6 output $out_left
+workspace 7 output $out_left
+workspace 8 output $out_left
+workspace 9 output $out_left
+workspace 10 output $out_left
