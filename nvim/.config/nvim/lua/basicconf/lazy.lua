@@ -21,7 +21,6 @@ require("lazy").setup({
   -- Telescope and dependencies, this help to navigate in a project
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.1',
     dependencies = { 'nvim-lua/plenary.nvim' }
     -- Suggested dependencies, maybe some warnings will appear if not
     -- installed
@@ -32,8 +31,6 @@ require("lazy").setup({
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   -- Lsp helper, lsp help with errors
   { 'neovim/nvim-lspconfig' },
-  -- Prettier, formater for javascript, css, html
-  { 'jose-elias-alvarez/null-ls.nvim' },
   { 'MunifTanjim/prettier.nvim' },
   -- Icons
   { 'nvim-tree/nvim-web-devicons' },
