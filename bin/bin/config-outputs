@@ -49,5 +49,5 @@ esac
 
 swaymsg reload
 
-echo "Configuration was applied"
+notify-send "Configuration was applied"
 
