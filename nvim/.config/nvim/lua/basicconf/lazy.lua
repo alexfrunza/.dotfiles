@@ -12,7 +12,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- require("lazy").setup(plugins, opts)
 require("lazy").setup({
   -- Best color scheme
   { "catppuccin/nvim",                 name = "catppuccin" },
@@ -34,4 +33,7 @@ require("lazy").setup({
   { 'MunifTanjim/prettier.nvim' },
   -- Icons
   { 'nvim-tree/nvim-web-devicons' },
+  { "folke/zen-mode.nvim" },
+  { "sindrets/diffview.nvim" },
+  { "tpope/vim-fugitive" },
 })
