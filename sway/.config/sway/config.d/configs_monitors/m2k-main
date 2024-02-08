@@ -1,0 +1,17 @@
+set $out_left DP-1
+set $out_right eDP-1
+
+output $out_left pos 0,0 mode 2560x1440@120Hz
+output $out_right pos 2560,0 mode 1920x1080@60Hz
+
+workspace 1 output $out_left
+workspace 2 output $out_left
+workspace 3 output $out_left
+workspace 4 output $out_left
+workspace 5 output $out_left
+
+workspace 6 output $out_right
+workspace 7 output $out_right
+workspace 8 output $out_right
+workspace 9 output $out_right
+workspace 10 output $out_right

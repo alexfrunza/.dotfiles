@@ -1,11 +1,14 @@
 #!/bin/bash
 
+shopt -s extglob
+
 HELP_MESSAGE="\
 Used for switching the configurations for display.\n\n\
 Arguments:\n\
 -h              - show this message\n\
-dual-monitors   - configure the output for two monitors\n\
-single-monitor  - configure the output for one monitor\n"
+main-mfhd   - configure the output for laptop screen and a full hd monitor on the right\n\
+m2k-main   - configure the output for a 2k monitor on the left and laptop screen\n\
+main  - configure the output for laptop screen only\n"
 
 WAYBAR_CONFIG_PATH="/home/$USER/.dotfiles/waybar/.config/waybar"
 SWAY_CONFIG_PATH="/home/$USER/.dotfiles/sway/.config/sway"
@@ -16,10 +19,10 @@ function replace_waybar_config {
 
 function replace_sway_config {
     case $1 in 
-        "config_dual_monitors" )
+        +(main-mfhd|m2k-main) )
             ln -sf "$SWAY_CONFIG_PATH/config.d/configs_monitors/$1" "$SWAY_CONFIG_PATH/config.d/monitors.conf"
             ;;
-        "config_single_monitor" )
+        "main" )
             if [ -f "$SWAY_CONFIG_PATH/config.d/monitors.conf" ]; then
                 rm "$SWAY_CONFIG_PATH/config.d/monitors.conf"
             fi
@@ -33,13 +36,9 @@ case $1 in
         printf "$HELP_MESSAGE" 
         exit 0
         ;;
-    "dual-monitors" )
-        replace_waybar_config config_dual_monitors
-        replace_sway_config config_dual_monitors
-        ;;
-    "single-monitor" )
-        replace_waybar_config config_single_monitor
-        replace_sway_config config_single_monitor
+    +(main-mfhd|m2k-main|main) )
+        replace_waybar_config $1
+        replace_sway_config $1
         ;;
     * )
         printf "$HELP_MESSAGE"
