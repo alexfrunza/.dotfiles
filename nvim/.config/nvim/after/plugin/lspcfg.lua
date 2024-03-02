@@ -54,12 +54,12 @@ require 'lspconfig'.clangd.setup {
   on_attach = set_keymaps,
 }
 
-require 'lspconfig'.eslint.setup {
-  on_attach = set_keymaps_js,
+require'lspconfig'.ruff_lsp.setup{
+  on_attach = set_keymaps,
 }
 
-require 'lspconfig'.pylsp.setup {
-  on_attach = set_keymaps,
+require 'lspconfig'.eslint.setup {
+  on_attach = set_keymaps_js,
 }
 
 require 'lspconfig'.tsserver.setup {
