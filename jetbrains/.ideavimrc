@@ -1,0 +1,4 @@
+let mapleader = " "
+
+nnoremap <Leader>= :action ReformatCode<CR>
+nnoremap <Leader>r :action Run<CR>
