@@ -37,7 +37,7 @@ local set_keymaps_js = function()
   -- Show details of an error
   vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
   -- Format code
-  vim.keymap.set("n", "<leader>=", '<cmd>!prettier --write %<cr>', opts)
+  vim.keymap.set("n", "<leader>=", '<cmd>!prettier --write %<cr><cr>', opts)
   -- Rename a variable
   vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
 
@@ -95,6 +95,7 @@ require 'lspconfig'.lua_ls.setup {
       workspace = {
         -- Make the server aware of Neovim runtime files
         library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false,
       },
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = {
