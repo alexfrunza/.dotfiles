@@ -1,16 +1,17 @@
 local set_keymaps = function()
   local opts = { buffer = 0 }
 
-  -- vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
-  vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })
-  vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
+  vim.keymap.set("n", "K", vim.lsp.buf.hover)
+  vim.keymap.set("n", "gd", require('telescope.builtin').lsp_definitions)
+  vim.keymap.set("n", "gr", require('telescope.builtin').lsp_references)
+  -- vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
   -- vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, { buffer = 0 })
-  vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = 0 })
+  -- vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = 0 })
 
   vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, opts)
   vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, opts)
   -- List of diagnostics in telescope
-  vim.keymap.set("n", "<leader>dl", require 'telescope.builtin'.diagnostics, opts)
+  vim.keymap.set("n", "<leader>dl", require('telescope.builtin').diagnostics, opts)
   -- Show details of an error
   vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
   -- Format code
@@ -24,7 +25,7 @@ end
 local set_keymaps_js = function()
   local opts = { buffer = 0 }
 
-  -- vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
+  vim.keymap.set("n", "K", vim.lsp.buf.hover)
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })
   vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
   -- vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, { buffer = 0 })
