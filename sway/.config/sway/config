@@ -27,6 +27,7 @@ set $rofi_cmd rofi \
 set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 
 bindsym $mod+e exec $rofi_cmd -modi emoji -show emoji
+bindsym $mod+c exec $rofi_cmd -show calc -modi calc -no-show-match -no-sort -no-history -lines 0
 
 ### Output configuration
 #

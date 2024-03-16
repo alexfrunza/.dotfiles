@@ -9,6 +9,9 @@
 #### Emoji selector
 - [rofi-emoji](https://github.com/Mange/rofi-emoji)
 
+#### Calculator
+- [rofi-calc](https://github.com/svenstaro/rofi-calc)
+
 ### Neovim
 
 #### LSP setup
