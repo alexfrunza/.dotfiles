@@ -1,4 +1,7 @@
 let mapleader = " "
 
+set number
+set relativenumber
+
 nnoremap <Leader>= :action ReformatCode<CR>
 nnoremap <Leader>r :action Run<CR>
