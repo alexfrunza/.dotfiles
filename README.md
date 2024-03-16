@@ -4,6 +4,11 @@
 
 ## Guides applications
 
+### Rofi
+
+#### Emoji selector
+- [rofi-emoji](https://github.com/Mange/rofi-emoji)
+
 ### Neovim
 
 #### LSP setup
@@ -16,8 +21,6 @@
 
 ##### JavaScript
 
-- 
-
 ### JetBrains IDEs
 
 #### Setup
@@ -25,6 +28,6 @@
 - Font size: 16
 - Line height: 1.2
 - Theme: Catppuccin Macchiato
-- Plugins: IdeaVim
+- Plugins: IdeaVim, Catppuccin Theme
 
 
