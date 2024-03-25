@@ -5,3 +5,4 @@ set relativenumber
 
 nnoremap <Leader>= :action ReformatCode<CR>
 nnoremap <Leader>r :action Run<CR>
+nnoremap <Leader>q :action ShowIntentionActions<CR>
