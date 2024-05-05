@@ -36,7 +36,7 @@ require("lazy").setup({
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
     end
   },
-  { 'MunifTanjim/prettier.nvim' },
+
   -- Icons
   { 'nvim-tree/nvim-web-devicons' },
   { "folke/zen-mode.nvim" },
@@ -138,6 +138,49 @@ require("lazy").setup({
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+
+  -- formatter
+  {
+    'stevearc/conform.nvim',
+    keys = {
+      {
+        "<leader>=",
+        function()
+          require("conform").format({ async = true, lsp_fallback = true })
+        end,
+        desc = "Format buffer",
+      },
+    },
+    opts = {
+      formatters_by_ft = {
+        -- Use a sub-list to run only the first available formatter
+        javascript = { { "prettierd", "prettier" } },
+        javascriptreact = { { "prettierd", "prettier" } },
+        typescript = { { "prettierd", "prettier" } },
+        typescriptreact = { { "prettierd", "prettier" } },
+        html = { { "prettierd", "prettier" } },
+        json = { { "prettierd", "prettier" } },
+      },
+    },
+  },
+
+  {
+    "mfussenegger/nvim-lint",
+    config = function()
+      local lint = require("lint")
+
+      lint.linters_by_ft = {
+        javascript = { "eslint_d" },
+        typescript = { "eslint_d" },
+        javascriptreact = { "eslint_d" },
+        typescriptreact = { "eslint_d" },
+      }
+
+      vim.keymap.set("n", "<leader>l", function()
+        lint.try_lint()
+      end, { desc = "Trigger linting for current file" })
+    end
+  },
 
   -- Obsidian
   {

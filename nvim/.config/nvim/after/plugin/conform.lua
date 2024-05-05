@@ -1,0 +1,11 @@
+-- require("conform").setup({
+--   formatters_by_ft = {
+--     -- Use a sub-list to run only the first available formatter
+--     javascript = { "prettier" },
+--     javascriptreact = { "prettier" },
+--     typescript = { "prettier" },
+--     typescriptreact = { "prettier" },
+--     html = { "prettier" },
+--     json = { "prettier" },
+--   },
+-- })

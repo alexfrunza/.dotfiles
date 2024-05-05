@@ -21,5 +21,3 @@ vim.g.mapleader = " "
 
 vim.opt.guicursor = "i:block"
 
-vim.opt.conceallevel = 1
-
