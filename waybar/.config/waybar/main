@@ -22,7 +22,8 @@
       "pulseaudio",
       "backlight",
       "battery",
-      "battery#bat2"
+      "battery#bat2",
+      "tray"
     ],
     "idle_inhibitor": {
       "format": "{icon}",
