@@ -23,6 +23,8 @@ if [ -d ~/.bashrc.d ]; then
 	done
 fi
 
+TERM=xterm-256color
+
 unset rc
 
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"

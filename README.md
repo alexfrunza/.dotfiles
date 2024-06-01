@@ -34,6 +34,16 @@
 
 ### JetBrains IDEs
 
+### nnn
+
+#### Fedora
+
+- Install `readline-devel`
+- Install nerd fonts if you don't have them already installed
+- Add `#include <strings.h>` in `src/icons-hash.c`
+- Compile with `make O_NERD=1`
+- Add to path `sudo make strip install`
+
 #### Setup
 
 - Font size: 16
