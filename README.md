@@ -19,6 +19,18 @@
 - [plugins](https://github.com/jarun/nnn/tree/master/plugins)
 - In order to have icons you must compile with the [O_NERD=1 flag](https://github.com/jarun/nnn/wiki/Advanced-use-cases#to-enable-nerdfont-icons)
 
+#### Change default app for a filetype
+
+The guide is from [reddit](https://www.reddit.com/r/linux4noobs/comments/jc7vcx/nnn_how_to_open_file_directly/).
+
+```
+nnn uses xdg-open by default. You need to configure your default applications for different file types.
+Use xdg-mime query filetype <PATH_TO_FILE> to get the file type.
+Then use xdg-mime default <APPLICATION> <FILE_TYPE> to set the default application.
+For example if you wanted to open your jpeg image in feh, you can do xdg-mime default feh.desktop image/jpeg
+```
+
+
 #### Fedora
 
 - Install `readline-devel`
