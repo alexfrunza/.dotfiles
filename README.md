@@ -49,6 +49,17 @@
 
 ##### JavaScript
 
+##### C
+
+- Install clangd
+
+    - On fedora:
+
+    ```sh
+    sudo dnf install clang
+    sudo dnf install clang-tools-extra
+    ```
+
 ### JetBrains IDEs
 
 #### Setup
