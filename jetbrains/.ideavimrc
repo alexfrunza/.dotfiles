@@ -2,6 +2,7 @@ let mapleader = " "
 
 set number
 set relativenumber
+set clipboard+=unnamedplus
 
 nnoremap <Leader>= :action ReformatCode<CR>
 nnoremap <Leader>r :action Run<CR>
