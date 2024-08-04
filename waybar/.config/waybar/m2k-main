@@ -33,7 +33,7 @@
       }
     },
     "sway/workspaces": {
-      "persistent_workspaces": {
+      "persistent-workspaces": {
         "1": [],
         "2": [],
         "3": [],
@@ -154,7 +154,7 @@
       "sway/workspaces"
     ],
     "sway/workspaces": {
-      "persistent_workspaces": {
+      "persistent-workspaces": {
         "6": [],
         "7": [],
         "8": [],
