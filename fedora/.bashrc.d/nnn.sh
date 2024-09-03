@@ -22,7 +22,7 @@ n ()
 
     # The command builtin allows one to alias nnn to n, if desired, without
     # making an infinitely recursive alias
-    command nnn "$@"
+    command nnn -A "$@"
 
     [ ! -f "$NNN_TMPFILE" ] || {
         . "$NNN_TMPFILE"
@@ -34,5 +34,5 @@ n ()
 export NNN_BMS="/:/;.:$HOME/.dotfiles/;D:$HOME/Downloads/"
 
 # plugins
-export NNN_PLUG='f:fzcd;o:fzopen'
+export NNN_PLUG='f:fzcd;o:fzopen;d:diffs'
 
