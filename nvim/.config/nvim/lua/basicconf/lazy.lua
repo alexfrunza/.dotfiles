@@ -39,6 +39,7 @@ require("lazy").setup({
 
   -- Icons
   { 'nvim-tree/nvim-web-devicons' },
+
   { "folke/zen-mode.nvim" },
   { "sindrets/diffview.nvim" },
   { "tpope/vim-fugitive" },
@@ -180,6 +181,12 @@ require("lazy").setup({
         lint.try_lint()
       end, { desc = "Trigger linting for current file" })
     end
+  },
+
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" }
   },
 
   -- Obsidian
