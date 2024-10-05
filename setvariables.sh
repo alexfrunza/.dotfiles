@@ -2,7 +2,7 @@
 
 # You must update the array manually for new configurations
 
-DEFAULT_DIRS=("tmux" "clang-format" "bin" "nvim" "fonts" "neofetch" "ranger" "jetbrains")
+DEFAULT_DIRS=("tmux" "clang-format" "bin" "nvim" "fonts" "neofetch" "jetbrains")
 
 # Available configurations for launchers
 launchers=("rofi")

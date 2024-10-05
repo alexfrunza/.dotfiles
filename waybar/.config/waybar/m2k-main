@@ -17,7 +17,7 @@
       "keyboard-state",
       "sway/language",
       "idle_inhibitor",
-      "network",
+//      "network",
       "memory",
       "pulseaudio",
       "backlight",
