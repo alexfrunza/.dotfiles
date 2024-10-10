@@ -34,5 +34,5 @@ n ()
 export NNN_BMS="/:/;.:$HOME/.dotfiles/;D:$HOME/Downloads/"
 
 # plugins
-export NNN_PLUG='f:fzcd;o:fzopen;d:diffs'
+export NNN_PLUG='f:fzcd;o:fzopen;d:diffs;?:fzopen'
 
