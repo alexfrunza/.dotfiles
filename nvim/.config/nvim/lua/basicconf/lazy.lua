@@ -160,6 +160,13 @@ require("lazy").setup({
         typescriptreact = { "prettierd", "prettier", stop_after_first = true },
         html = { "prettierd", "prettier", stop_after_first = true },
         json = { "prettierd", "prettier", stop_after_first = true },
+        python = function(bufnr)
+          if require("conform").get_formatter_info("ruff format", bufnr).available then
+            return { "ruff format" }
+          else
+            return { "black" }
+          end
+        end,
       },
     },
   },

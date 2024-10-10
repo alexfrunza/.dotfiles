@@ -8,9 +8,9 @@ local set_keymaps = function()
   vim.keymap.set("n", "K", vim.lsp.buf.hover)
   vim.keymap.set("n", "gd", require('telescope.builtin').lsp_definitions)
   vim.keymap.set("n", "gr", require('telescope.builtin').lsp_references)
-  -- vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
+  vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
   -- vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, { buffer = 0 })
-  -- vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = 0 })
+  vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = 0 })
 
   vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, opts)
   vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, opts)
@@ -36,9 +36,19 @@ require 'lspconfig'.clangd.setup {
   on_attach = set_keymaps,
 }
 
-require 'lspconfig'.pylsp.setup {
+require 'lspconfig'.pyright.setup {
   on_attach = set_keymaps,
+  settings = {
+    python = {
+      analysis = {
+        -- ignore = { '*' }
+        -- typeCheckingMode = "off"
+      }
+    }
+  }
 }
+
+require 'lspconfig'.ruff.setup {}
 
 require 'lspconfig'.eslint.setup {
   on_attach = set_keymaps,
