@@ -43,7 +43,9 @@ For example if you wanted to open your jpeg image in feh, you can do xdg-mime de
 
 #### Emoji selector
 
-- [rofi-emoji](https://github.com/Mange/rofi-emoji)
+```
+sudo dnf install rofimoji
+```
 
 #### Calculator
 
