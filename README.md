@@ -85,3 +85,8 @@ sudo dnf install rofimoji
 - Plugins: IdeaVim, Catppuccin Theme
 
 
+### Others useful applications
+
+- [bat](https://github.com/sharkdp/bat) - better alternative for cat
+
+

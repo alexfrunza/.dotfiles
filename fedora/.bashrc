@@ -27,7 +27,10 @@ TERM=xterm-256color
 
 unset rc
 
-# . "$HOME/.cargo/env"
+if [ -f "$HOME/.cargo/env" ]; then
+    . "$HOME/.cargo/env"
+fi
+ 
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -60,3 +63,4 @@ if [ -f "/home/afrunza/miniforge3/etc/profile.d/mamba.sh" ]; then
 fi
 # <<< conda initialize <<<
 
+export HSA_OVERRIDE_GFX_VERSION=11.0.0
