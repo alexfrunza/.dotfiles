@@ -41,14 +41,15 @@ require 'lspconfig'.pyright.setup {
   settings = {
     python = {
       analysis = {
-        -- ignore = { '*' }
+        ignore = { '*' },
         -- typeCheckingMode = "off"
       }
     }
   }
 }
 
-require 'lspconfig'.ruff.setup {}
+require 'lspconfig'.ruff.setup {
+}
 
 require 'lspconfig'.eslint.setup {
   on_attach = set_keymaps,

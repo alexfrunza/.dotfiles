@@ -13,10 +13,20 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  -- Best color scheme
-  { "catppuccin/nvim",                 name = "catppuccin" },
+  -- Color scheme
+  {
+    'ribru17/bamboo.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('bamboo').setup {
+        -- optional configuration here
+      }
+      require('bamboo').load()
+    end,
+  },
   -- Treesitter, syntax highlighting
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  { "nvim-treesitter/nvim-treesitter",          build = ":TSUpdate" },
   -- Telescope and dependencies, this help to navigate in a project
   {
     'nvim-telescope/telescope.nvim',

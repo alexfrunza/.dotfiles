@@ -5,23 +5,23 @@
 DEFAULT_DIRS=("tmux" "clang-format" "bin" "nvim" "fonts" "neofetch" "jetbrains")
 
 # Available configurations for launchers
-launchers=("rofi")
+launchers=("rofi" "none")
 
 # Available configurations for window manager
-wms=("sway" "i3")
+wms=("sway" "i3" "none")
 
 # Available configurations for status bars
-bars=("waybar" "i3status")
+bars=("waybar" "i3status" "none")
 
 # Available configurations for distro
 distros=("debian" "fedora")
 
 # Available configurations for terminal emulator
-terminals=("kitty" "foot")
+terminals=("kitty" "foot" "none")
 
 # Checks array to not allow wayland and xorg configurations at the same time
 x_elements=("i3status" "i3")
-wayland_elements=("sway" "waybar")
+wayland_elements=("sway" "waybar" "none")
 
 # Things available only in xorg or only in wayland, one array must be used
 
@@ -35,6 +35,7 @@ BAR=			# a value from bars array from up there
 WAYLAND=		# (y, n) a value from paranthesis
 DISTRO=			# a value from distros array from up there
 TERMINAL=		# a value from terminals array from up there
+LAUNCHER=               # a value from launchers array from up there
 
 printf "\n\
 Hello, welcome to setting variables script!\n\
@@ -149,6 +150,23 @@ while true; do
 	break
 done
 
+while true; do
+	echo "What launcher do you want to use? Options:"
+	for i in ${!launchers[@]}; do
+		echo "$((i + 1)). ${launchers[$i]}"
+	done
+
+	read -p "Enter the name of your option: " LAUNCHER
+	echo ""
+
+	if [[ ! " ${launchers[*]} " =~ " ${LAUNCHER} " ]]; then
+		echo "Your choice is not on the list! Try again."
+		continue
+	fi
+	
+	break
+done
+
 
 # Create stowdirs file
 # Template:
@@ -165,11 +183,23 @@ for element in ${DEFAULT_DIRS[@]}; do
 	STOW_DIRS_ELEMENTS+="\"${element}\" "
 done
 
-STOW_DIRS_ELEMENTS+="\"$WINDOW_MANAGER\" "
-STOW_DIRS_ELEMENTS+="\"$BAR\" "
+if [[ "$WINDOW_MANAGER" != "none" ]]; then
+	STOW_DIRS_ELEMENTS+="\"$WINDOW_MANAGER\" "
+fi
+
+if [[ "$BAR" != "none" ]]; then
+	STOW_DIRS_ELEMENTS+="\"$BAR\" "
+fi
+
 STOW_DIRS_ELEMENTS+="\"$DISTRO\" "
-STOW_DIRS_ELEMENTS+="\"$TERMINAL\" "
-STOW_DIRS_ELEMENTS+="\"${launchers[0]}\" "
+
+if [[ "$TERMINAL" != "none" ]]; then
+	STOW_DIRS_ELEMENTS+="\"$TERMINAL\" "
+fi
+
+if [[ "$LAUNCHER" != "none" ]]; then
+	STOW_DIRS_ELEMENTS+="\"$LAUNCHER\" "
+fi
 
 if [[ WAYLAND == "n" ]]; then
 	for element in ${x_specific[@]}; do
