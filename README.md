@@ -90,3 +90,32 @@ sudo dnf install rofimoji
 - [bat](https://github.com/sharkdp/bat) - better alternative for cat
 
 
+## Drivers
+
+- Get Tuxedo drivers in Fedora:
+```sh
+sudo dnf update
+sudo vi /etc/yum.repos.d/tuxedo.repo
+# After modify the yum repo run this commands:
+# Driver for wired network card
+sudo dnf install tuxedo-yt6801
+# Other drivers
+sudo dnf install tuxedo-drivers
+# (Optional)
+sudo dnf install tuxedo-control-center
+```
+
+> Update the Fedora version if needed below
+
+- Paste this in `/etc/yum.repos.d/tuxedo.repo`
+```toml
+[tuxedo]
+name=TUXEDO
+baseurl=https://rpm.tuxedocomputers.com/fedora/41/x86_64/base
+enabled=1
+gpgcheck=1
+gpgkey=https://rpm.tuxedocomputers.com/fedora/41/0x54840598.pub.asc
+skip_if_unavailable=False
+```
+
+
