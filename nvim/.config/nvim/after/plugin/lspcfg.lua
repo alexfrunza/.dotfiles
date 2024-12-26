@@ -41,7 +41,7 @@ require 'lspconfig'.pyright.setup {
   settings = {
     python = {
       analysis = {
-        ignore = { '*' },
+        -- ignore = { '*' },
         -- typeCheckingMode = "off"
       }
     }
@@ -60,7 +60,7 @@ require 'lspconfig'.ts_ls.setup {
 }
 
 require 'lspconfig'.rust_analyzer.setup {
-  -- You need to install this: https://rust-analyzer.github.io/manual.html#rust-analyzer-language-server-binary
+  -- You need to install this: https://rust-analyzer.github.io/manual.html#rustup
   on_attach = set_keymaps,
 }
 
