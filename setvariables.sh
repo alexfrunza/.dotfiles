@@ -14,7 +14,7 @@ wms=("sway" "i3" "none")
 bars=("waybar" "i3status" "none")
 
 # Available configurations for distro
-distros=("debian" "fedora")
+distros=("debian" "fedora" "tuxedo")
 
 # Available configurations for terminal emulator
 terminals=("kitty" "foot" "none")

@@ -15,15 +15,15 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- Color scheme
   {
-    'ribru17/bamboo.nvim',
+    'neanias/everforest-nvim',
+    version = false,
     lazy = false,
     priority = 1000,
     config = function()
-      require('bamboo').setup {
-        transparent = true,
-        -- optional configuration here
+      require('everforest').setup {
+        transparent_background_level = 0.9,
       }
-      require('bamboo').load()
+      require('everforest').load()
     end,
   },
   -- Treesitter, syntax highlighting
