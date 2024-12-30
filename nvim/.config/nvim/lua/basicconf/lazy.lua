@@ -13,6 +13,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  -- Manager LS
+  {
+    "williamboman/mason.nvim"
+  },
   -- Color scheme
   {
     'neanias/everforest-nvim',
