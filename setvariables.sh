@@ -2,7 +2,9 @@
 
 # You must update the array manually for new configurations
 
-DEFAULT_DIRS=("tmux" "clang-format" "bin" "nvim" "fonts" "neofetch" "jetbrains")
+# Other defaults for mac
+DEFAULT_DIRS=("tmux" "nvim" "jetbrains")
+# DEFAULT_DIRS=("tmux" "clang-format" "bin" "nvim" "fonts" "neofetch" "jetbrains")
 
 # Available configurations for launchers
 launchers=("rofi" "none")
@@ -14,17 +16,18 @@ wms=("sway" "i3" "none")
 bars=("waybar" "i3status" "none")
 
 # Available configurations for distro
-distros=("debian" "fedora" "tuxedo")
+distros=("debian" "fedora" "tuxedo" "mac")
 
 # Available configurations for terminal emulator
 terminals=("kitty" "foot" "none")
+
+display_servers=("wayland" "xorg" "none")
 
 # Checks array to not allow wayland and xorg configurations at the same time
 x_elements=("i3status" "i3")
 wayland_elements=("sway" "waybar" "none")
 
 # Things available only in xorg or only in wayland, one array must be used
-
 x_specific=("picom")
 wayland_specific=()
 
@@ -32,7 +35,7 @@ wayland_specific=()
 
 WINDOW_MANAGER=		# a value from wms array from up there
 BAR=			# a value from bars array from up there
-WAYLAND=		# (y, n) a value from paranthesis
+DISPLAY_SERVER=         # a value from display servers array from up there
 DISTRO=			# a value from distros array from up there
 TERMINAL=		# a value from terminals array from up there
 LAUNCHER=               # a value from launchers array from up there
@@ -60,11 +63,16 @@ while true; do
 done
 
 while true; do
-	read -p "Do you use wayland? (y/n) " WAYLAND
+	echo "What display server do you want to use? Options:"
+	for i in ${!display_servers[@]}; do
+		echo "$((i + 1)). ${display_servers[$i]}"
+	done
+
+	read -p "Enter the name of your option: " DISPLAY_SERVER
 	echo ""
 
-	if [[ $WAYLAND != "y" ]] && [[ $WAYLAND != "n" ]]; then
-		echo "Please respond only with: y or n!"
+	if [[ ! " ${display_servers[*]} " =~ " ${DISPLAY_SERVER} " ]]; then
+		echo "Your choice is not on the list! Try again."
 		continue
 	fi
 	
@@ -75,7 +83,7 @@ done
 wms_choice=()
 bars_choice=()
 
-if [[ $WAYLAND == "n" ]]; then
+if [[ $DISPLAY_SERVER == "xorg" ]]; then
 	for element in ${x_elements[*]}; do
 		if [[ " ${wms[*]} " =~ " ${element} " ]]; then
 			wms_choice+=($element)
@@ -86,7 +94,9 @@ if [[ $WAYLAND == "n" ]]; then
 		fi
 
 	done
-else
+fi
+
+if [[ $DISPLAY_SERVER == "wayland" ]]; then
 	for element in ${wayland_elements[*]}; do
 		if [[ " ${wms[*]} " =~ " ${element} " ]]; then
 			wms_choice+=($element)
@@ -201,11 +211,13 @@ if [[ "$LAUNCHER" != "none" ]]; then
 	STOW_DIRS_ELEMENTS+="\"$LAUNCHER\" "
 fi
 
-if [[ WAYLAND == "n" ]]; then
+if [[ "$DISPLAY_SERVER" == "xorg" ]]; then
 	for element in ${x_specific[@]}; do
 		STOW_DIRS_ELEMENTS+="\"${element}\" "
 	done
-else
+fi
+
+if [[ "$DISPLAY_SERVER" == "wayland" ]]; then
 	for element in ${wayland_specific[@]}; do
 		STOW_DIRS_ELEMENTS+="\"${element}\" "
 	done
