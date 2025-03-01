@@ -33,11 +33,11 @@ wayland_specific=()
 
 # End available configurations - the part from up there must be manually updated
 
-WINDOW_MANAGER=		# a value from wms array from up there
-BAR=			# a value from bars array from up there
+WINDOW_MANAGER=none		# a value from wms array from up there
+BAR=none	     		# a value from bars array from up there
 DISPLAY_SERVER=         # a value from display servers array from up there
-DISTRO=			# a value from distros array from up there
-TERMINAL=		# a value from terminals array from up there
+DISTRO=		        	# a value from distros array from up there
+TERMINAL=		        # a value from terminals array from up there
 LAUNCHER=               # a value from launchers array from up there
 
 printf "\n\
@@ -83,65 +83,67 @@ done
 wms_choice=()
 bars_choice=()
 
-if [[ $DISPLAY_SERVER == "xorg" ]]; then
-	for element in ${x_elements[*]}; do
-		if [[ " ${wms[*]} " =~ " ${element} " ]]; then
-			wms_choice+=($element)
-		fi
+if [[ $DISPLAY_SERVER != "none" ]]; then
+    if [[ $DISPLAY_SERVER == "xorg" ]]; then
+        for element in ${x_elements[*]}; do
+            if [[ " ${wms[*]} " =~ " ${element} " ]]; then
+                wms_choice+=($element)
+            fi
 
-		if [[ " ${bars[*]} " =~ " ${element} " ]]; then
-			bars_choice+=($element)
-		fi
+            if [[ " ${bars[*]} " =~ " ${element} " ]]; then
+                bars_choice+=($element)
+            fi
 
-	done
+        done
+    fi
+
+    if [[ $DISPLAY_SERVER == "wayland" ]]; then
+        for element in ${wayland_elements[*]}; do
+            if [[ " ${wms[*]} " =~ " ${element} " ]]; then
+                wms_choice+=($element)
+            fi
+
+            if [[ " ${bars[*]} " =~ " ${element} " ]]; then
+                bars_choice+=($element)
+            fi
+        done
+    fi
+
+
+    while true; do
+        echo "What window manager do you want to use? Options:"
+        for i in ${!wms_choice[@]}; do
+            echo "$((i + 1)). ${wms_choice[$i]}"
+        done
+
+        read -p "Enter the name of your option: " WINDOW_MANAGER
+        echo ""
+
+        if [[ ! " ${wms_choice[*]} " =~ " ${WINDOW_MANAGER} " ]]; then
+            echo "Your choice is not on the list! Try again."
+            continue
+        fi
+        
+        break
+    done
+
+    while true; do
+        echo "What bar do you want to use? Options:"
+        for i in ${!bars_choice[@]}; do
+            echo "$((i + 1)). ${bars_choice[$i]}"
+        done
+
+        read -p "Enter the name of your option: " BAR
+        echo ""
+
+        if [[ ! " ${bars_choice[*]} " =~ " ${BAR} " ]]; then
+            echo "Your choice is not on the list! Try again."
+            continue
+        fi
+        
+        break
+    done
 fi
-
-if [[ $DISPLAY_SERVER == "wayland" ]]; then
-	for element in ${wayland_elements[*]}; do
-		if [[ " ${wms[*]} " =~ " ${element} " ]]; then
-			wms_choice+=($element)
-		fi
-
-		if [[ " ${bars[*]} " =~ " ${element} " ]]; then
-			bars_choice+=($element)
-		fi
-	done
-fi
-
-
-while true; do
-	echo "What window manager do you want to use? Options:"
-	for i in ${!wms_choice[@]}; do
-		echo "$((i + 1)). ${wms_choice[$i]}"
-	done
-
-	read -p "Enter the name of your option: " WINDOW_MANAGER
-	echo ""
-
-	if [[ ! " ${wms_choice[*]} " =~ " ${WINDOW_MANAGER} " ]]; then
-		echo "Your choice is not on the list! Try again."
-		continue
-	fi
-	
-	break
-done
-
-while true; do
-	echo "What bar do you want to use? Options:"
-	for i in ${!bars_choice[@]}; do
-		echo "$((i + 1)). ${bars_choice[$i]}"
-	done
-
-	read -p "Enter the name of your option: " BAR
-	echo ""
-
-	if [[ ! " ${bars_choice[*]} " =~ " ${BAR} " ]]; then
-		echo "Your choice is not on the list! Try again."
-		continue
-	fi
-	
-	break
-done
 
 while true; do
 	echo "What terminal do you want to use? Options:"
