@@ -132,4 +132,17 @@ gpgkey=https://rpm.tuxedocomputers.com/fedora/41/0x54840598.pub.asc
 skip_if_unavailable=False
 ```
 
+### macOS
+
+```zsh
+# Faster Dock Hiding (first option is for the time for macOS to decide to display the dock, and the second one is for how long to display/hide the dock)
+defaults write com.apple.dock autohide-delay -float 0; defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock
+# Default Values
+defaults write com.apple.dock autohide-delay -float 0.5; defaults write com.apple.dock autohide-time-modifier -int 0.5 ;killall Dock
+```
+
+#### Useful apps on macOS
+
+- BetterDisplay in order to scale resolution on not HiDPI screens
+
 

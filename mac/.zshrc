@@ -1,4 +1,6 @@
 
+export EDITOR=nvim
+
 # Colors for programs like `ls`
 export CLICOLOR=1
 
