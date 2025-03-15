@@ -15,3 +15,9 @@ fi
 
 unset rc
 
+# For Rust
+. "$HOME/.cargo/env"
+
+# Enable autocomplete in zsh
+autoload -Uz compinit
+compinit
