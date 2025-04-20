@@ -1,3 +1,5 @@
+export PS1="%{%F{39}%}%n%{%F{81}%}@%{%F{77}%}%m %{%F{226}%}%1~ %{%f%}$ "
+
 bindkey -e
 
 # User specific aliases and functions
