@@ -63,10 +63,14 @@ sudo dnf install rofimoji
 - Use Mason plugin to maintain language servers/linters/formatters etc.
 - Language servers/linters/formatters used:
     - clangd
+    - eslint-lsp
     - lua-language-server
+    - prettierd
     - pyright
     - ruff
     - rust-analyzer
+    - typescript-language-server
+    - yaml-language-server
 
 - Install language servers/linters/formatters with the command:
     - `:MasonInstall <name>`
