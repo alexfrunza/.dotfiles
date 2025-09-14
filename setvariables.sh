@@ -1,9 +1,14 @@
 #!/bin/bash
 
+# TODO: make this in python, because is available everywhere
+
 # You must update the array manually for new configurations
 
 # Other defaults for mac
-DEFAULT_DIRS=("tmux" "nvim" "jetbrains")
+DEFAULT_DIRS=("tmux" "nvim" "fonts")
+# Configs for fedora
+# DEFAULT_DIRS=("tmux" "nvim" "fonts")
+# All configs, I guess
 # DEFAULT_DIRS=("tmux" "clang-format" "bin" "nvim" "fonts" "neofetch" "jetbrains")
 
 # Available configurations for launchers
