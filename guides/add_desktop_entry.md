@@ -20,3 +20,5 @@ Categories=Utility
 StartupWMClass=obsidian
 ```
 4. To use the new settings, run the command: `update-desktop-database ~/.local/share/applications`
+
+To check what value to put in `StartupWMClass`, you can use the command: `xprop | grep WM_CLASS`, and then click the app you want to create the desktop entry for. After that see the output of the command.
